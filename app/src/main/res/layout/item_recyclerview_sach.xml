@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="10dp"
+    android:layout_marginTop="15dp"
+    android:layout_marginRight="10dp"
+    app:cardCornerRadius="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FACDBF"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_weight="1.7"
+            android:orientation="vertical">
+
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="140dp"
+                android:background="#FACDBF"
+                android:scaleType="fitXY"
+                android:src="@drawable/book_svgrepo_com__1_" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_weight="0.8"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txt_masach"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/regular"
+                android:text="AAA"
+                android:textAllCaps="true"
+                android:textColor="#EA580C"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/txt_tensach"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/regular"
+                android:text="AAA"
+                android:textAllCaps="true"
+                android:textColor="#EA580C"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/txt_giathue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/regular"
+                android:text="AAA"
+                android:textAllCaps="true"
+                android:textColor="#EA580C"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/txt_maloai_sach"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/regular"
+                android:text="AAA"
+                android:textAllCaps="true"
+                android:textColor="#EA580C"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/txt_tenloai_sach"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/regular"
+                android:text="AAA"
+                android:textAllCaps="true"
+                android:textColor="#EA580C"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_weight="2.02"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/iv_edit_sach"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="right"
+                android:layout_marginTop="40dp"
+                android:layout_marginRight="8dp"
+                android:src="@drawable/edit_tools_and_utensils_svgrepo_com" />
+
+            <ImageView
+                android:id="@+id/iv_delete_sach"
+                android:layout_width="30dp"
+                android:layout_height="40dp"
+                android:layout_gravity="right"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/can_trash_svgrepo_com" />
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

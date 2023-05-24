@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_qlpm"
+        android:fontFamily="@font/regular"
+        android:icon="@drawable/ic_outline_home_24"
+        android:title="Quản lý phiếu mươn" />
+    <item
+        android:id="@+id/nav_qlls"
+        android:fontFamily="@font/regular"
+        android:icon="@drawable/ic_outline_library_books_24"
+        android:title="Quản lý loại sách" />
+    <item
+        android:id="@+id/nav_qls"
+        android:fontFamily="@font/regular"
+        android:icon="@drawable/ic_outline_book_24"
+        android:title="Quản lý sách" />
+    <item
+        android:id="@+id/nav_qltv"
+        android:fontFamily="@font/regular"
+        android:icon="@drawable/ic_outline_group_24"
+        android:title="Quản lý thành viên" />
+
+    <item
+        android:fontFamily="@font/regular"
+        android:title="Thống kê">
+        <menu>
+            <item
+                android:id="@+id/nav_top10"
+                android:fontFamily="@font/regular"
+                android:icon="@drawable/ic_outline_vertical_align_top_24"
+                android:title="Top 10 sách mượn nhiều nhất" />
+            <item
+                android:id="@+id/nav_doanhthu"
+                android:fontFamily="@font/regular"
+                android:icon="@drawable/ic_outline_attach_money_24"
+                android:title="Doanh thu" />
+        </menu>
+    </item>
+
+    <item
+        android:fontFamily="@font/regular"
+        android:title="Nguời dùng">
+        <menu>
+            <item
+                android:id="@+id/nav_them_nguoudung"
+                android:fontFamily="@font/regular"
+                android:icon="@drawable/ic_outline_group_add_24"
+                android:title="Thêm người dùng" />
+            <item
+                android:id="@+id/nav_doi_matkhau"
+                android:fontFamily="@font/regular"
+                android:icon="@drawable/ic_outline_vpn_key_24"
+                android:title="Đổi mật khẩu" />
+            <item
+                android:id="@+id/nav_dangxuat"
+                android:fontFamily="@font/regular"
+                android:icon="@drawable/ic_outline_logout_24"
+                android:title="Đăng xuất" />
+        </menu>
+    </item>
+
+
+</menu>

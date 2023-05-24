@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="15dp"
+    android:backgroundTint="#FACDBF"
+    app:cardCornerRadius="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
+        android:background="#FACDBF"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/txt_mapm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/regular"
+            android:text="aaa"
+            android:textAllCaps="true"
+            android:textColor="#EA580C"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/txt_matt_pm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/regular"
+            android:text="aaa"
+            android:textAllCaps="true"
+            android:textColor="#EA580C"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/txt_tentt_pm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/regular"
+            android:text="aaa"
+            android:textAllCaps="true"
+            android:textColor="#EA580C"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/txt_matv_pm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/regular"
+            android:text="aaa"
+            android:textAllCaps="true"
+            android:textColor="#EA580C"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/txt_tentv_pm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/regular"
+            android:text="aaa"
+            android:textAllCaps="true"
+            android:textColor="#EA580C"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/txt_masach_pm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/regular"
+            android:text="aaa"
+            android:textAllCaps="true"
+            android:textColor="#EA580C"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/txt_tensach_pm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/regular"
+            android:text="aaa"
+            android:textAllCaps="true"
+            android:textColor="#EA580C"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/txt_ngay_pm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/regular"
+            android:text="aaa"
+            android:textAllCaps="true"
+            android:textColor="#EA580C"
+            android:textSize="18sp" />
+
+
+        <TextView
+            android:id="@+id/txt_tienthue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/regular"
+            android:text="aaa"
+            android:textAllCaps="true"
+            android:textColor="#EA580C"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/txt_trangthai"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/regular"
+            android:text="aaa"
+            android:textAllCaps="true"
+            android:textColor="#EA580C"
+            android:textSize="18sp" />
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_trasach"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/background_btn"
+            android:text="Trả sách"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
