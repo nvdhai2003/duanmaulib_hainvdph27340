@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".fragment.DoanhThuFragment"
     android:background="@color/white"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".fragment.DoanhThuFragment">
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/til_username"
@@ -26,6 +26,9 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="center"
+            android:cursorVisible="false"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
             android:fontFamily="@font/regular"
             android:imeOptions="actionDone"
             android:inputType="text"
@@ -53,6 +56,9 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="center"
+            android:cursorVisible="false"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
             android:fontFamily="@font/regular"
             android:imeOptions="actionDone"
             android:inputType="text"
@@ -67,30 +73,29 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/edt_tenloai"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="20dp"
         android:background="@drawable/bg_button"
         android:backgroundTint="@color/primary_color"
-        android:text="Doanh thu"
         android:fontFamily="@font/semibold"
+        android:text="Doanh thu"
         android:textColor="@color/white"
-        android:textSize="18sp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginTop="30dp"/>
+        android:textSize="18sp" />
 
     <TextView
         android:id="@+id/txt_ketqua"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
+        android:fontFamily="@font/semibold"
+        android:gravity="center"
         android:text="aaa"
         android:textAllCaps="true"
-        android:gravity="center"
-        android:layout_marginTop="200dp"
+        android:textColor="#EA580C"
         android:textSize="26sp"
         android:textStyle="bold"
-        android:fontFamily="@font/semibold"
-        android:textColor="#EA580C"
-        android:visibility="gone"
-        />
+        android:visibility="gone" />
 
 
 </LinearLayout>
