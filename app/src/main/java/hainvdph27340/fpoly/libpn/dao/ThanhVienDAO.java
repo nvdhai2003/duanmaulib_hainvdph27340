@@ -24,17 +24,18 @@ public class ThanhVienDAO {
         if (cursor.getCount() != 0) {
             cursor.moveToFirst();
             do {
-                list.add(new ThanhVien(cursor.getInt(0), cursor.getString(1), cursor.getString(2)));
+                list.add(new ThanhVien(cursor.getInt(0), cursor.getString(1), cursor.getString(2), cursor.getString(3)));
             } while (cursor.moveToNext());
         }
         return list;
     }
 
-    public boolean themThanhVien(String HOTEN, String NAMSINH) {
+    public boolean themThanhVien(String HOTEN, String NAMSINH, String GIOITINH) {
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put("HOTEN", HOTEN);
         contentValues.put("NAMSINH", NAMSINH);
+        contentValues.put("GIOITINH", GIOITINH);
         long check = db.insert("THANHVIEN", null, contentValues);
         if (check == -1) {
             return false;

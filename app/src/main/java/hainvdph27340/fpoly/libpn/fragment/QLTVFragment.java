@@ -14,6 +14,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -112,6 +114,9 @@ public class QLTVFragment extends Fragment {
 
         EditText edtThemNamSinh = view.findViewById(R.id.edt_add_namsinh);
         EditText edtThemHoTen = view.findViewById(R.id.edt_add_hoten);
+        RadioGroup radioGroup = view.findViewById(R.id.radioGroup);
+        RadioButton rbNam = view.findViewById(R.id.rb_nam);
+        RadioButton rbNu = view.findViewById(R.id.rb_nu);
         AppCompatButton btnAdd = view.findViewById(R.id.btn_add_thanhvien);
         AppCompatButton btnHuy = view.findViewById(R.id.btn_cancel_add_thanhvien);
 
@@ -129,10 +134,18 @@ public class QLTVFragment extends Fragment {
             public void onClick(View v) {
                 String themHoTen = edtThemHoTen.getText().toString();
                 String themNamSinh = edtThemNamSinh.getText().toString();
+                String gender;
+                if (rbNam.isChecked()) {
+                    gender = "Nam";
+                } else if (rbNu.isChecked()) {
+                    gender = "Nữ";
+                } else {
+                    gender = "Khác";
+                }
                 if (themNamSinh.isEmpty() || themHoTen.isEmpty()) {
                     Toast.makeText(getContext(), "Vui lòng điền đầy đủ thông tin", Toast.LENGTH_SHORT).show();
                 } else {
-                    boolean check = thanhVienDAO.themThanhVien(themHoTen, themNamSinh);
+                    boolean check = thanhVienDAO.themThanhVien(themHoTen, themNamSinh, gender);
                     if (check) {
                         Toast.makeText(getContext(), "Thêm thành viên thành công", Toast.LENGTH_SHORT).show();
                         loadData();

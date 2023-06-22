@@ -4,11 +4,21 @@ public class ThanhVien {
     private int MATV;
     private String HOTEN;
     private String NAMSINH;
+    private String GIOITINH;
 
-    public ThanhVien(int MATV, String HOTEN, String NAMSINH) {
+    public ThanhVien(int MATV, String HOTEN, String NAMSINH, String GIOITINH) {
         this.MATV = MATV;
         this.HOTEN = HOTEN;
         this.NAMSINH = NAMSINH;
+        this.GIOITINH = GIOITINH;
+    }
+
+    public String getGIOITINH() {
+        return GIOITINH;
+    }
+
+    public void setGIOITINH(String GIOITINH) {
+        this.GIOITINH = GIOITINH;
     }
 
     public int getMATV() {

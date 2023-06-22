@@ -5,11 +5,14 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.res.ColorStateList;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -47,6 +50,20 @@ public class ThanhVienAdapter extends RecyclerView.Adapter<ThanhVienAdapter.View
         holder.txtMaTv.setText("MÃ THÀNH VIÊN: " + thanhVien.getMATV());
         holder.txtTenTv.setText("HỌ TÊN: " + thanhVien.getHOTEN());
         holder.txtNamSinh.setText("NĂM SINH: " + thanhVien.getNAMSINH());
+        holder.txtGioiTinh.setText("GIỚI TÍNH: " + thanhVien.getGIOITINH());
+
+        if (thanhVien.getGIOITINH().equals("Nam")) {
+            holder.linearThanhVien.setBackgroundResource(R.color.orange);
+        } else {
+            holder.linearThanhVien.setBackgroundResource(R.color.blue);
+        }
+
+        holder.linearThanhVien.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showDialogThongTin(thanhVien);
+            }
+        });
         holder.ivEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -119,8 +136,9 @@ public class ThanhVienAdapter extends RecyclerView.Adapter<ThanhVienAdapter.View
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        TextView txtMaTv, txtTenTv, txtNamSinh;
+        TextView txtMaTv, txtTenTv, txtNamSinh, txtGioiTinh;
         ImageView ivEdit, ivDelete;
+        LinearLayout linearThanhVien;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -128,8 +146,10 @@ public class ThanhVienAdapter extends RecyclerView.Adapter<ThanhVienAdapter.View
             txtMaTv = itemView.findViewById(R.id.txt_matv);
             txtTenTv = itemView.findViewById(R.id.txt_tentv);
             txtNamSinh = itemView.findViewById(R.id.txt_namsinh);
+            txtGioiTinh = itemView.findViewById(R.id.txt_gioitinh);
             ivEdit = itemView.findViewById(R.id.iv_edit_tv);
             ivDelete = itemView.findViewById(R.id.iv_delete_tv);
+            linearThanhVien = itemView.findViewById(R.id.linear_thanhvien);
         }
     }
 
@@ -189,5 +209,33 @@ public class ThanhVienAdapter extends RecyclerView.Adapter<ThanhVienAdapter.View
             }
         });
         dialog.show();
+    }
+    @SuppressLint({"MissingInflatedId", "LocalSuppress"})
+    public void showDialogThongTin(ThanhVien thanhVien) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+        LayoutInflater layoutInflater = ((Activity) context).getLayoutInflater();
+        View view = layoutInflater.inflate(R.layout.dialog_show_thongtin, null);
+        builder.setView(view);
+
+        TextView tvMaTv = view.findViewById(R.id.txt_show_matv);
+        TextView tvTenTv = view.findViewById(R.id.txt_show_tentv);
+        TextView tvNamSinhTv = view.findViewById(R.id.txt_show_namsinhtv);
+        TextView tvGioiTinhTv = view.findViewById(R.id.txt_show_gioitinhtv);
+
+        tvMaTv.setText("MÃ THÀNH VIÊN: " + String.valueOf(thanhVien.getMATV()));
+        tvTenTv.setText("HỌ TÊN: " + thanhVien.getHOTEN());
+        tvNamSinhTv.setText("NĂM SINH: " + thanhVien.getNAMSINH());
+        tvGioiTinhTv.setText("GIỚI TÍNH: " + thanhVien.getGIOITINH());
+
+        AlertDialog dialog = builder.create();
+
+        dialog.setOnShowListener(new DialogInterface.OnShowListener() {
+            @Override
+            public void onShow(DialogInterface dialogInterface) {
+                dialog.getWindow().setBackgroundDrawableResource(R.drawable.dialog_background);
+            }
+        });
+        dialog.show();
+
     }
 }
