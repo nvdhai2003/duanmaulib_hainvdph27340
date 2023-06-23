@@ -77,10 +77,6 @@
             android:layout_marginLeft="20dp"
             android:layout_marginTop="10dp"
             android:fontFamily="@font/semibold"/>
-
-
-
-
     </LinearLayout>
 
 

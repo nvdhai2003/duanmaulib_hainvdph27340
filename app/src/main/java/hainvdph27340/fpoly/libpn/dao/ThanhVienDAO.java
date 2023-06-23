@@ -56,11 +56,12 @@ public class ThanhVienDAO {
         return 1;
     }
 
-    public boolean capNhatThanhVien(int MATV, String HOTEN, String NAMSINH) {
+    public boolean capNhatThanhVien(int MATV, String HOTEN, String NAMSINH, String GIOITINH) {
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put("HOTEN", HOTEN);
         contentValues.put("NAMSINH", NAMSINH);
+        contentValues.put("GIOITINH", GIOITINH);
         long check = db.update("THANHVIEN", contentValues, "MATV = ?", new String[]{String.valueOf(MATV)});
         if (check == -1) {
             return false;

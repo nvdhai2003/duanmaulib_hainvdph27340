@@ -88,6 +88,25 @@
                 android:textSize="18sp" />
         </com.google.android.material.textfield.TextInputLayout>
 
+        <RadioGroup
+            android:id="@+id/radioGroupEdit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginStart="20dp">
+            <RadioButton
+                android:id="@+id/rb_edit_nu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nữ"/>
+            <RadioButton
+                android:id="@+id/rb_edit_nam"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nam"
+                android:layout_marginStart="20dp"/>
+        </RadioGroup>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

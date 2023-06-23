@@ -13,6 +13,8 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -163,12 +165,22 @@ public class ThanhVienAdapter extends RecyclerView.Adapter<ThanhVienAdapter.View
         TextView txtMatv = view.findViewById(R.id.txt_edit_matv);
         EditText edtEditHoTen = view.findViewById(R.id.edt_edt_hoten);
         EditText edtEditNamSinh = view.findViewById(R.id.edt_edt_namsinh);
+        RadioGroup radioGroup = view.findViewById(R.id.radioGroupEdit);
+        RadioButton rbNam = view.findViewById(R.id.rb_edit_nam);
+        RadioButton rbNu = view.findViewById(R.id.rb_edit_nu);
         AppCompatButton btnLuu = view.findViewById(R.id.btn_save_thanhvien);
         AppCompatButton btnHuy = view.findViewById(R.id.btn_cancel_thanhvien);
 
         txtMatv.setText("MÃ THÀNH VIÊN: " + String.valueOf(thanhVien.getMATV()));
         edtEditHoTen.setText(thanhVien.getHOTEN());
         edtEditNamSinh.setText(thanhVien.getNAMSINH());
+
+        if (thanhVien.getGIOITINH().equals("Nam")) {
+            rbNam.setChecked(true);
+        } else if (thanhVien.getGIOITINH().equals("Nữ")) {
+            rbNu.setChecked(true);
+        }
+        RadioButton selectedRadioButton = view.findViewById(radioGroup.getCheckedRadioButtonId());
 
         AlertDialog dialog = builder.create();
         btnLuu.setOnClickListener(new View.OnClickListener() {
@@ -177,8 +189,18 @@ public class ThanhVienAdapter extends RecyclerView.Adapter<ThanhVienAdapter.View
                 String hoten = edtEditHoTen.getText().toString();
                 String namsinh = edtEditNamSinh.getText().toString();
                 int matv = thanhVien.getMATV();
+                String gender;
+                if (rbNam.isChecked()) {
+                    gender = "Nam";
+                } else if (rbNu.isChecked()) {
+                    gender = "Nữ";
+                } else {
+                    gender = "Khác";
+                }
 
-                boolean check = thanhVienDAO.capNhatThanhVien(matv, hoten, namsinh);
+                String selectedGender = selectedRadioButton.getText().toString();
+                boolean check = thanhVienDAO.capNhatThanhVien(matv, hoten, namsinh, gender);
+
                 if (hoten.isEmpty() || namsinh.isEmpty()) {
                     Toast.makeText(context, "Vui lòng điền đầy đủ thông tin", Toast.LENGTH_SHORT).show();
                 } else {
@@ -189,6 +211,7 @@ public class ThanhVienAdapter extends RecyclerView.Adapter<ThanhVienAdapter.View
                         Toast.makeText(context, "Cập nhật thất bại", Toast.LENGTH_SHORT).show();
                     }
                 }
+
 
                 dialog.dismiss();
             }
@@ -210,6 +233,7 @@ public class ThanhVienAdapter extends RecyclerView.Adapter<ThanhVienAdapter.View
         });
         dialog.show();
     }
+
     @SuppressLint({"MissingInflatedId", "LocalSuppress"})
     public void showDialogThongTin(ThanhVien thanhVien) {
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
